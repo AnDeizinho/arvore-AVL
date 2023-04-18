@@ -1,20 +1,9 @@
-//
-//# include "lista.h"
-//
-//int main()
-//{
-//	struct item* item = newItem("andrey");
-//	inserir(item, "costa");
-//	inserir(item, "queiroz");
-//	inserir(item, "zemblergumanbarquer");
-//	listar(item);
-//	system("pause");
-//}
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
 
+// basic structure
 struct node {
     int valor;
     struct node* esq;
@@ -22,24 +11,8 @@ struct node {
     int altura;
 };
 
-//// Funções auxiliares
-//int max(int a, int b);
-//int altura(No* no);
-//int fatorBalanceamento(No* no);
-//
-//// Funções de rotação
-//No* rotacaoDireita(No* y);
-//No* rotacaoEsquerda(No* x);
-//No* rotacaoDireitaEsquerda(No* z);
-//No* rotacaoEsquerdaDireita(No* z);
-//
-//// Funções do CRUD
-//No* criarNo(int valor);
-//No* inserir(No* no, int valor);
-//No* buscar(No* no, int valor);
-//No* atualizar(No* no, int valorAntigo, int valorNovo);
 struct node* deletar(struct node* no, int valor);
-//void listar(No* no);
+
 
 
 int max(int a, int b) {
@@ -117,7 +90,7 @@ struct node* inserir(struct node* no, int valor) {
 	} else if (valor > no->valor) {
 		no->dir = inserir(no->dir, valor);
 	} else {
-		// valor já existe na árvore
+		// valor jÃ¡ existe na Ã¡rvore
 		return no;
 	}
 
@@ -235,45 +208,7 @@ void listar(struct node* no) {
 
 int main() {
     struct node* raiz = NULL;
-
-    //// Inserção de dados
-    //raiz = inserir(raiz, 10);
-    //raiz = inserir(raiz, 20);
-    //raiz = inserir(raiz, 30);
-    //raiz = inserir(raiz, 40);
-    //raiz = inserir(raiz, 50);
-    //raiz = inserir(raiz, 25);
-
-    //// Listagem de dados
-    //printf("Dados na arvore: ");
-    //listar(raiz);
-    //printf("\n");
-
-    //// Busca de um dado
-    //int valorBusca = 30;
-    //No* noBusca = buscar(raiz, valorBusca);
-    //if (noBusca == NULL) {
-    //    printf("%d nao encontrado na arvore.\n", valorBusca);
-    //} else {
-    //    printf("%d encontrado na arvore.\n", noBusca->valor);
-    //}
-
-    //// Atualização de um dado
-    //int valorAntigo = 30;
-    //int valorNovo = 35;
-    //raiz = atualizar(raiz, valorAntigo, valorNovo);
-    //printf("Dados na arvore apos atualizacao: ");
-    //listar(raiz);
-    //printf("\n");
-
-    //// Deleção de um dado
-    //int valorDeletar = 35;
-    //raiz = deletar(raiz, valorDeletar);
-    //printf("Dados na arvore apos delecao: ");
-    //listar(raiz);
-    //printf("\n");
-
-	int opcao, valor, valorAntigo;
+int opcao, valor, valorAntigo;
 
 	do {
 		printf("\nEscolha uma opcao:\n");
